@@ -19,3 +19,9 @@ class AddBasket(BasePage):
         price = self.browser.find_element(*AddBusketLocators.BASKET_PRICE).text
         item_price = self.browser.find_element(*AddBusketLocators.ITEM_PRICE).text
         assert price == item_price, "Price in the message about adding in the basket is incorrect"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*AddBusketLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def should_not_disappear_success_message(self):
+        assert self.is_disappeared(*AddBusketLocators.SUCCESS_MESSAGE), "Success message is presented, but should be disappeared"
