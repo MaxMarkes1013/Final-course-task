@@ -48,7 +48,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page.should_not_be_success_message()
 
 @pytest.mark.need_review
-def test_user_cant_see_product_in_basket_opened_from_product_page(browser):
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = Basket(browser, link)
     page.open()
